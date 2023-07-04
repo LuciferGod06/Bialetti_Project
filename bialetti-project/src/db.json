@@ -1,0 +1,19 @@
+    {
+        "products": [
+            {
+                "title": "Esperto Grani Intenso",
+                "type": "coffee",
+                "price": 9.99,
+                "description": "Intenso coffee beans are a blend specially developed to guarantee a strong, intense, concentrated coffee.A 100% robusta selection gives the blend depth and body, while the dark roast enhances the hints of bitter cocoa.
+                The passion for the Italian coffee ritual and Bialetti’s experience have produced the best coffee beans, even for automatic machines, perfect for those who love to experiment and come up with their own blends.","image": "https://www.bialetti.com/media/catalog/product/cache/e8aa104d064dcf81ed9afb1c9c6893f4/i/n/intenso_frontale.png"
+            },
+            {
+                "title": "Ground coffee - Perfetto Moka Irresistibile",
+                "type": "coffee",
+                "price": 9.99,
+                "description": "Perfetto Moka Irresistibile coffee is the result of the encounter between the skilful art of Bialetti’s master coffee roasters and the creative flair of Dolce&Gabbana.
+                The fine quality blend of 80% Arabica and 20% Robusta makes Perfetto Moka Irresistibile a coffee with a rounded, delicate taste, in which the broad bouquet of floral and fruity notes mingles with the mouth-watering ones of hazelnut and cocoa, in a sophisticated fusion of flavours typical of Italian tradition.",
+                "image": "https://www.bialetti.com/media/catalog/product/cache/e8aa104d064dcf81ed9afb1c9c6893f4/p/m/pm-irresistibile-visione-frontale-2.png"
+            }
+        ]
+    }
