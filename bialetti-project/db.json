@@ -160,6 +160,69 @@
                 "price": 69.90,
                 "description": "The Gioia capsule coffee machine allows you to enjoy the best Bialetti espresso in the comfort of your home.",
                 "image": "https://www.bialetti.com/media/catalog/product/cache/e8aa104d064dcf81ed9afb1c9c6893f4/3/_/3_gioia_ceruleo.png"
+            },
+            {
+                "title": "Red Vacuum Flask with Cup/Lid",
+                "type": "accessories",
+                "price": 6.10,
+                "description": "The Bialetti vacuum flask is the ideal way to enjoy your coffee or favourite drink wherever you like! Thanks to its double wall and the quality of the materials used, your drinks will stay hot for 12 hours or cold for 24 hours.",
+                "image": "https://www.bialetti.com/media/catalog/product/cache/e8aa104d064dcf81ed9afb1c9c6893f4/d/c/dcxin00001_01.png"
+            },
+            {
+                "title": "Grey Vacuum Flask",
+                "type": "accessories",
+                "price": 6.10,
+                "description": "The grey vacuum flask allows you to enjoy your favourite coffee, always hot, whenever and wherever you want, without sacrificing a touch of colour and originality.",
+                "image": "https://www.bialetti.com/media/catalog/product/cache/e8aa104d064dcf81ed9afb1c9c6893f4/d/c/dcxin00008_01_1.png"
+            },
+            {
+                "title": "Coffee cup",
+                "type": "accessories",
+                "price": 3.29,
+                "description": "The Bialetti Moka pot coffee cup in white porcelain, with the iconic little man with a mustache, was designed by Bialetti to enjoy a delicious coffee prepared according to true tradition with the Moka Express.",
+                "image": "https://www.bialetti.com/media/catalog/product/cache/e8aa104d064dcf81ed9afb1c9c6893f4/Y/0/Y0TZ097_01_2.png"
+            },
+            {
+                "title": "Set of 4 eight faces cups",
+                "type": "accessories",
+                "price": 11.10,
+                "description": "Bialetti’s octagonal coffee cup in black and rose gold porcelain, with the iconic little man with a mustache, was designed by Bialetti to enjoy a delicious coffee prepared according to true Italian tradition.",
+                "image": "https://www.bialetti.com/media/catalog/product/cache/e8aa104d064dcf81ed9afb1c9c6893f4/_/t/_tazzina_ottagonale_gold.png"
+            },
+            {
+                "title": "Tricolore Mug",
+                "type": "accessories",
+                "price": 6.10,
+                "description": "The Bialetti Tricolore mug is an ode to Italian identity.Bialetti and the famous little man with the mustache have always been famous interpreters and ambassadors of ‘Made in Italy’ the world over.",
+                "image": "https://www.bialetti.com/media/catalog/product/cache/e8aa104d064dcf81ed9afb1c9c6893f4/D/C/DCMOKI0032_01.png"
+            },
+            {
+                "title": "Steel Manual Milk Frother",
+                "type": "accessories",
+                "price": 8.10,
+                "description": "The Bialetti manual milk frother is for anyone who loves to pamper themselves with a creamy cappuccino.",
+                "image": "https://www.bialetti.com/media/catalog/product/cache/e8aa104d064dcf81ed9afb1c9c6893f4/0/0/0003990_cappuccinatore-acciaio_1.png"
+            },
+            {
+                "title": "White Electric Milk Frother",
+                "type": "accessories",
+                "price": 9.40,
+                "description": "The Bialetti white electric milk frother is for anyone who loves to pamper themselves with a creamy cappuccino, latte macchiato or frothed milk.",
+                "image": "https://www.bialetti.com/media/catalog/product/cache/e8aa104d064dcf81ed9afb1c9c6893f4/_/m/_milkfrother-economico-bianco-_-presa.png"
+            },
+            {
+                "title": "Tuttocrema-milk frother",
+                "type": "accessories",
+                "price": 11.23,
+                "description": "Bialetti Tuttocrema is the simplest and most practical way to obtain a soft crema.Ideal for enjoying a cappuccino, latte macchiato or frothed milk in the comfort of your home.",
+                "image": "https://www.bialetti.com/media/catalog/product/cache/e8aa104d064dcf81ed9afb1c9c6893f4/0/0/00AGR394_01_1.png"
+            },
+            {
+                "title": "Milk Frother",
+                "type": "accessories",
+                "price": 8.19,
+                "description": "The Bialetti glass Milk Frother is the simplest and most practical way to obtain a soft crema!Ideal for enjoying a cappuccino, latte macchiato or frothed milk in the comfort of your home.",
+                "image": "https://www.bialetti.com/media/catalog/product/cache/e8aa104d064dcf81ed9afb1c9c6893f4/0/0/0004410_01_1.png"
             }
         ]
     }
