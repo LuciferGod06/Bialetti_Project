@@ -125,20 +125,34 @@
                 "price": 79.90,
                 "description": "Gioia Responsible is a coffee machine designed to produce an excellent espresso while also being good for the planet. Gioia Responsible allows you to enjoy the best Bialetti coffee in the comfort of your home while respecting the environment.",
                 "image": "https://www.bialetti.com/media/catalog/product/cache/e8aa104d064dcf81ed9afb1c9c6893f4/g/i/gioia-responsible-lato.png"
+            },
+            {
+                "title": "Super Bialetti - Capsule Coffee Machine",
+                "type": "Espresso Machines",
+                "price": 79.90,
+                "description": "The Super capsule coffee machine is sturdy and durable, the perfect ally even after multiple brews.",
+                "image": "https://www.bialetti.com/media/catalog/product/cache/e8aa104d064dcf81ed9afb1c9c6893f4/s/u/super_laterale_nera.png"
+            },
+            {
+                "title": "Bialetti Gioia Capsule Machine",
+                "type": "Espresso Machines",
+                "price": 69.90,
+                "description": "The Gioia capsule coffee machine allows you to enjoy the best Bialetti espresso in the comfort of your home.",
+                "image": "https://www.bialetti.com/media/catalog/product/cache/e8aa104d064dcf81ed9afb1c9c6893f4/0/1/012900110_sc_01_1_1.png"
+            },
+            {
+                "title": "Super Bialetti - Capsule Coffee Machine",
+                "type": "Espresso Machines",
+                "price": 79.90,
+                "description": "The Super capsule coffee machine is sturdy and durable, the perfect ally even after multiple brews.",
+                "image": "https://www.bialetti.com/media/catalog/product/cache/e8aa104d064dcf81ed9afb1c9c6893f4/s/u/super_laterale_nera.png"
+            },
+            {
+                "title": "Bialetti Gioia - Capsule Coffee Machine",
+                "type": "Espresso Machines",
+                "price": 69.90,
+                "description": "The Gioia capsule coffee machine allows you to enjoy the best Bialetti espresso in the comfort of your home.",
+                "image": "https://www.bialetti.com/media/catalog/product/cache/e8aa104d064dcf81ed9afb1c9c6893f4/3/_/3_gioia_ceruleo.png"
             }
-        ],
-        {
-            "title": "Super Bialetti - Capsule Coffee Machine",
-            "type": "Espresso Machines",
-            "price": 79.90,
-            "description": "The Super capsule coffee machine is sturdy and durable, the perfect ally even after multiple brews.",
-            "image": "https://www.bialetti.com/media/catalog/product/cache/e8aa104d064dcf81ed9afb1c9c6893f4/s/u/super_laterale_nera.png"
-        },
-        {
-            "title": "Bialetti Gioia Capsule Machine",
-            "type": "Espresso Machines",
-            "price": 69.90,
-            "description": "The Gioia capsule coffee machine allows you to enjoy the best Bialetti espresso in the comfort of your home.",
-            "image": "https://www.bialetti.com/media/catalog/product/cache/e8aa104d064dcf81ed9afb1c9c6893f4/0/1/012900110_sc_01_1_1.png"
-        }
+        ]
     }
