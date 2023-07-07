@@ -1,70 +1,126 @@
-import React, { useState } from "react";
-import { Box, Heading, TagLabel,Tag, TagLeftIcon, Grid, Center, Divider,ColorMode,Image, Flex, Button, Checkbox } from '@chakra-ui/react'
+import React, { useEffect, useState } from "react";
+import { Box, Heading, TagLabel,Tag, TagLeftIcon, Grid, Center, Divider,ColorMode,Image, Flex, Button, Checkbox, Text } from '@chakra-ui/react'
 import { Icon } from '@chakra-ui/react'
 import { ArrowLeftIcon,CloseIcon,DeleteIcon, QuestionOutlineIcon } from "@chakra-ui/icons";
-
+import { useDispatch, useSelector } from "react-redux";
+import { SubToal, currTotal, handlAdd, handlRed } from "../../Redux/action";
+import axios from 'axios';
+import { Total } from "../../Redux/ActionType";
 
 
 const CartPage=()=>{
-    // const [incrementVal,setIncrementVal] =useState(0)
-    // const [decrementVal,setDecrementVal] =useState(0)
-    const arr=[
+      const [TOTAl,setTotal]=useState(0)
+    const {subTotal}=useSelector((store) => store.Reducer)
+    console.log(subTotal)
+    const dispatch=useDispatch()
+     const [array,setArray] = useState([])
+
+
+    const getData=()=>{
+        axios
+        .get(`https://mymock-sl72.onrender.com/data`)
+        .then((res)=>
         {
-            id:1,
-            title:"Capacinos",
-            image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtwQuvcZU_5Z0lGK5Vn5CSayzHnbS-_DEfd8ixucAhShPMRWII12I0HFEhLYClRkRFoh0&usqp=CAU",
-            cup1:"4 Cups",
-            cup2:"8 Cups",
-            price:150
-        },
-        {
-            id:2,
-            title:"Black Coffee",
-            image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPlb6vZRvaAGuq8Xn2gJP3idCL4Fv6D2X8gQ&usqp=CAU",
-            cup1:"5 Cups",
-            cup2:"9 Cups",
-            price:200
-        }, {
-            id:3,
-            title:"Nescaffe",
-            image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2QtbspNQASoWZq7JTZEm3M50XjqUpDufshr3ouonzydm_e0_amWF01Uef9u4te3WzrRI&usqp=CAU",
-            cup1:"2 Cups",
-            cup2:"4 Cups",
-            price:350
-        }
-    ]
+            console.log(res.data)
+            setArray(res.data)
+        })
+    }
+    useEffect(() =>{
+        getData()
+    },[])
+
+
+    useEffect(()=>{
+           const total=array.reduce((acc,curr)=>{
+            return acc+curr.price*curr.quantity
+           },0)
+           setTotal(total)
+        },[array])
+    
+ 
+    const handlIncrease=(id)=>{
+        console.log(id)
+        const newArr= array?.map((ele)=>{
+            if(ele.id==id){
+               return {...ele,quantity: ele.quantity+1}
+            }
+          if(ele.id==id){
+           array.reduce((acc,curr)=>{
+            return acc+curr.price
+           },0)
+          }
+            return ele
+         })
+       
+        setArray(newArr)
+    }
+
+    const handlDecrease=(id)=>{
+      
+        const newArr2= array?.map((ele)=>{
+            if(ele.id==id && ele.quantity>1){
+               return {...ele,
+                quantity: ele.quantity-1,
+               }
+            }
+         
+            return ele
+         })
+         console.log(newArr2)
+        setArray(newArr2)
+       
+    }
+       
+   const handlClick=()=>{
+    dispatch(SubToal(TOTAl))
+   }
+
+   const handDel=(id)=>{
+
+    axios.delete(`https://mymock-sl72.onrender.com/data/${id}`)
+    .then((res)=>{
+        getData()
+    })
+
+   }
+   
+
+   const AllDel=() => {
+    setArray([])
+   }
+
     return(
         
-     <Box m={10}>
-                <Box border='1px solid' ml={350} w={620}  >
-                    <Grid templateColumns='repeat(3, 1fr)' gap={6}>
-                  
-                    <Center> <Icon as={ArrowLeftIcon} bg={"#bd3b13"} color={"white"} /></Center>
-                        <Box>  <Heading>MY CART({arr.length})</Heading></Box>
-                        <Tag>
-                                  <Tag>Clear chart</Tag>
-                                  <TagLeftIcon boxSize='12px' as={DeleteIcon}/>
-                        </Tag>
+     <Box m={5} bgColor="gray.50">
+                <Box  m="auto" w="52%"  >
+                   
+                  <Flex justifyContent="space-between"  p="0px 30px">
+                    <Center> <Icon as={ArrowLeftIcon} w="5" bg={"#bd3b13"} color={"white"} /></Center>
+                        <Box>  <Heading>MY CART({array.length})</Heading></Box>
+                        <Flex  onClick={AllDel} w="18%" justifyContent="center" alignItems="center">
+                                  <Text>Clear Cart</Text>
+                                  <TagLeftIcon color="black" boxSize='12px' as={DeleteIcon} ml={2}/>
+                        </Flex>
                         
               
-                    
+                  </Flex>
                        
-                    </Grid>
+                    
                
                 </Box>
-                <Divider ml={350} w={620} colorScheme="gray" orientation="horizontal" mt={5}/>
+                <Divider m="auto" w={620} colorScheme="gray" orientation="horizontal" mt={5}/>
 
-                <Heading mt={5} ml={12} size="md">YOUR ORDERS QUALIFIES FOR FREE SHIPPING!</Heading>
+                <Heading mt={5} m="auto 5" size="md">YOUR ORDERS QUALIFIES FOR FREE SHIPPING!</Heading>
 
-                <Divider ml={460} borderRadius="15" w={400} h="3" bg='#bd3b13'  orientation="horizontal" mt={5}/>
+                <Divider m="auto" mt={5} mb={5} borderRadius="15" w={400} h="3" bg='gray'  orientation="horizontal"/>
            
 
 
 
+{/* ...........................MAP through the Array....................... */}
+           {array.map((ele,i)=>
 
-           {arr.map((ele)=>
-
-<Box mt={10} ml={350} w={620} h={40} p={3} boxShadow="md">
+      <Box   gap="5px" mt={10} m="auto" w={620} h={40} p={3} boxShadow="md" key={i}>
            <Flex>
 
             <Box bg="gray.200" p={5} borderRadius="md" w="100px" mt={3}>
@@ -74,9 +130,9 @@ const CartPage=()=>{
 
                  <Box  w={500} ml={5} >
                     <Box  mt={1} >
-                       <Flex>
+                       <Flex  justifyContent="space-between">
                        <Heading size="mid">{ele.title} </Heading>
-                       <Center><Icon as={CloseIcon}  ml={326}></Icon> </Center>
+                       <Center><Icon onClick={()=>{handDel(ele.id)}} as={CloseIcon} mr="20px" ></Icon> </Center>
                        </Flex>
                     </Box>
                     <Box mt={2}>
@@ -85,45 +141,33 @@ const CartPage=()=>{
                          <Button borderRadius='0'  colorScheme='teal' size='xs' variant='outline' ml={2}> {ele.cup2} </Button>
 
                         </Flex>
-                        
+                        {/* bg="none" color="red" */}
                     </Box>
                     <Box  mt={5}>
                         <Flex  gap={5}>
-                        <Button > - </Button>
+                        <Button   onClick={()=>handlDecrease(ele.id)}> - </Button>
                         
-                        <Center><Heading size={5}>2</Heading></Center>
+                       {/* _hover= { backgroundColor: "blue.500", color: "white" } */}
+                        <Center><Heading size={5}>{ele.quantity}</Heading></Center>
                         
-                        <Button > + </Button>
-                        <Center><Heading size="md" ml={260}>{ele.price}$</Heading></Center>
+                        <Button  onClick={()=>handlIncrease(ele.id)}> + </Button>
+                        <Center><Heading size="md" ml={260}>{ele.price*ele.quantity}$</Heading></Center>
                         </Flex>
-                        
-                        
                         
                     </Box>
                   </Box>
 
-
-
         </Flex>
                  
-
          </Box>
-
-
+         
            )}
         
 
 
-
-
-
-
-
-
-
-         <Box>
-            <Flex>
-            <Checkbox colorScheme='red' defaultChecked mt={8} ml={350}>
+         <Box  w={620} m="auto" >
+            <Flex  align="flex-start">
+            <Checkbox colorScheme='red' defaultChecked mt={8}  mb={5}>
              This order is a gift
              <Icon as={QuestionOutlineIcon} ml={2} ></Icon>
             </Checkbox>
@@ -131,16 +175,17 @@ const CartPage=()=>{
             </Flex>
         
          </Box>
-         <Divider mt={4} ml={350} w={620}/>
-         <Box ml={345} w={620} p={1} mt={3}>
-            <Flex  justifyContent="space-between">
+         <Divider mt={4} m="auto" w={620}/>
+         <Box m="auto" w={620}  mb={5} mt={3} >
+            <Flex justifyContent="space-between" >
             <Heading size="mid">SUBTOTAL :</Heading>
-            <Heading size="mid" mr={2.5}>1987</Heading>
+            <Heading size="mid" mr={2.5}>{TOTAl}$</Heading>
 
             </Flex>
             
          </Box>
-         <Button borderRadius='0' mt={5} bg='blackAlpha.800' color='white' ml={10} w={630}>CHECKOUT</Button>
+         <Button  bgColor="black" color="white"
+  _hover={{ backgroundColor: 'green', color: 'white' }} onClick={handlClick} borderRadius='0' mt={10}  m="auto" w={630}>CHECKOUT</Button>
            
      </Box>
            
