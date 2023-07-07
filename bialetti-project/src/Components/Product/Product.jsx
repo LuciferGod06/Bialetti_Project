@@ -11,6 +11,8 @@ import { Link } from 'react-router-dom';
 export const Product = () => {
   const [sorting, setsorting] = useState('');
   const [btn, setbtn] = useState('');
+  const [currentPage, setCurrentPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(0);
 
 
   useEffect(() => {
@@ -55,6 +57,9 @@ export const Product = () => {
       default: throw new Error("invalid")
     }
   }
+  const handlePageChange = (pageNumber) => {
+    setCurrentPage(pageNumber);
+  };
 
   return (
     <div style={{ padding: "10px 20px 10px 20px " }} >
@@ -100,7 +105,11 @@ export const Product = () => {
             }
 
             </div>
-            <Pagination />
+            <Pagination
+        currentPage={currentPage}
+        totalPages={totalPages}
+        onPageChange={handlePageChange}
+      />
           </div>
 
       }
