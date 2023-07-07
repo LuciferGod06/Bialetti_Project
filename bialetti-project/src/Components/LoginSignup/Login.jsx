@@ -21,28 +21,19 @@ import {
 } from "@chakra-ui/react";
 import { Formik, Field } from "formik";
 
-const Login = ({onLoginClose,isLoginOpen,onLoginOpen}) => {
- 
-
+const Login = ({ onLoginClose, isLoginOpen, onLoginOpen }) => {
   return (
     <>
       {/* <Button onClick={onOpenL}>Login</Button> */}
 
-      <Modal onClose={onLoginClose} isOpen={isLoginOpen} isCentered >
-        <ModalOverlay  />
-        <ModalContent borderRightRadius="0" borderLeftRadius="0" >
-
-          <ModalHeader>
-            LOGIN</ModalHeader>
+      <Modal onClose={onLoginClose} isOpen={isLoginOpen} isCentered>
+        <ModalOverlay />
+        <ModalContent borderRightRadius="0" borderLeftRadius="0">
+          <ModalHeader>LOGIN</ModalHeader>
           <ModalCloseButton />
 
           <ModalBody>
-            <Box
-              align="center"
-              justify="center"
-              bg="white"
-              p={1} 
-            >
+            <Box align="center" justify="center" bg="white" p={1}>
               <Formik
                 initialValues={{
                   email: "",
@@ -55,8 +46,8 @@ const Login = ({onLoginClose,isLoginOpen,onLoginOpen}) => {
               >
                 {({ handleSubmit, errors, touched }) => (
                   <form onSubmit={handleSubmit}>
-                    <VStack spacing={4} align="flex-start">
-                      <FormControl>
+                    <VStack spacing={2} align="flex-start">
+                      <FormControl isInvalid={!!errors.email && touched.email}>
                         <FormLabel htmlFor="email">Email Address</FormLabel>
                         <Field
                           as={Input}
@@ -64,8 +55,21 @@ const Login = ({onLoginClose,isLoginOpen,onLoginOpen}) => {
                           name="email"
                           type="email"
                           variant="filled"
-                          
+                          validate={(value) => {
+                            let error;
+                            if (!value) {
+                              error = "*Required";
+                            } else if (
+                              !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(
+                                value
+                              )
+                            ) {
+                              error = "Invalid email address";
+                            }
+                            return error;
+                          }}
                         />
+                        <FormErrorMessage>{errors.email}</FormErrorMessage>
                       </FormControl>
 
                       <FormControl
@@ -81,9 +85,8 @@ const Login = ({onLoginClose,isLoginOpen,onLoginOpen}) => {
                           validate={(value) => {
                             let error;
 
-                            if (value.length < 6) {
-                              error =
-                                "Password must contain at least 6 characters";
+                            if (!value) {
+                              error = "Please fill your password";
                             }
 
                             return error;
@@ -101,10 +104,14 @@ const Login = ({onLoginClose,isLoginOpen,onLoginOpen}) => {
                         Remember me?
                       </Field>
 
-                      <Button type="submit" bgColor="black" color={"white"}  width="full" >
+                      <Button
+                        type="submit"
+                        bgColor="black"
+                        color={"white"}
+                        width="full"
+                      >
                         Login
                       </Button>
-                      
                     </VStack>
                   </form>
                 )}
@@ -112,9 +119,7 @@ const Login = ({onLoginClose,isLoginOpen,onLoginOpen}) => {
             </Box>
           </ModalBody>
 
-          <ModalFooter>
-          </ModalFooter>
-
+          <ModalFooter></ModalFooter>
         </ModalContent>
       </Modal>
     </>

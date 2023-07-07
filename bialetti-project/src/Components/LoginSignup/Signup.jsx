@@ -20,14 +20,20 @@ import {
   Text,
   Link,
 } from "@chakra-ui/react";
-import { Formik, Field } from "formik";
-import "./signup.css";
+import { Formik, Field, Form } from "formik";
 import Login from "./Login";
 
 const Signup = () => {
-  
-  const { isOpen: isSignupOpen, onOpen: onSignupOpen, onClose: onSignupClose } = useDisclosure();
-  const { isOpen: isLoginOpen, onOpen: onLoginOpen, onClose: onLoginClose } = useDisclosure();
+  const {
+    isOpen: isSignupOpen,
+    onOpen: onSignupOpen,
+    onClose: onSignupClose,
+  } = useDisclosure();
+  const {
+    isOpen: isLoginOpen,
+    onOpen: onLoginOpen,
+    onClose: onLoginClose,
+  } = useDisclosure();
 
   const handleLoginClick = () => {
     onSignupClose();
@@ -38,13 +44,12 @@ const Signup = () => {
     <>
       <Button onClick={onSignupOpen}>Sign Up</Button>
 
-      <Modal isOpen={isSignupOpen} onClose={onSignupClose} >
-
+      <Modal isOpen={isSignupOpen} onClose={onSignupClose}>
         <ModalOverlay />
         <ModalContent
           borderRightRadius="0"
           borderLeftRadius="0"
-          id="modelsignup" 
+          id="modelsignup"
         >
           <ModalHeader>SIGN UP</ModalHeader>
           <ModalCloseButton />
@@ -53,20 +58,23 @@ const Signup = () => {
             <Box align="center" justify="center" bg="white" p={1}>
               <Formik
                 initialValues={{
-                  fname: "",
-                  lname: "",
+                  Fname: "",
+                  Lname: "",
                   email: "",
                   password: "",
                   rememberMe: false,
                 }}
                 onSubmit={(values) => {
-                  alert(JSON.stringify(values, null, 2));
+                  console.log(values);
+                  localStorage.setItem("userInfo",JSON.stringify(values));
+                  onSignupClose();
+                  onLoginOpen();
                 }}
               >
                 {({ handleSubmit, errors, touched }) => (
-                  <form onSubmit={handleSubmit}>
-                    <VStack spacing={4} align="flex-start">
-                      <FormControl>
+                  <Form onSubmit={handleSubmit}>
+                    <VStack spacing={2} align="flex-start">
+                      <FormControl isInvalid={!!errors.Fname && touched.Fname}>
                         <FormLabel htmlFor="Fname">First Name</FormLabel>
                         <Field
                           as={Input}
@@ -74,10 +82,18 @@ const Signup = () => {
                           name="Fname"
                           type="text"
                           variant="filled"
+                          validate={(value) => {
+                            let error;
+                            if (!value) {
+                              error = "*Required";
+                            }
+                            return error;
+                          }}
                         />
+                        <FormErrorMessage>{errors.Fname}</FormErrorMessage>
                       </FormControl>
 
-                      <FormControl>
+                      <FormControl isInvalid={!!errors.Lname && touched.Lname}>
                         <FormLabel htmlFor="Lname">Last Name</FormLabel>
                         <Field
                           as={Input}
@@ -85,10 +101,18 @@ const Signup = () => {
                           name="Lname"
                           type="text"
                           variant="filled"
+                          validate={(value) => {
+                            let error;
+                            if (!value) {
+                              error = "*Required";
+                            }
+                            return error;
+                          }}
                         />
+                        <FormErrorMessage>{errors.Lname}</FormErrorMessage>
                       </FormControl>
 
-                      <FormControl>
+                      <FormControl isInvalid={!!errors.email && touched.email}>
                         <FormLabel htmlFor="email">Email Address</FormLabel>
                         <Field
                           as={Input}
@@ -96,7 +120,21 @@ const Signup = () => {
                           name="email"
                           type="email"
                           variant="filled"
+                          validate={(value) => {
+                            let error;
+                            if (!value) {
+                              error = "*Required";
+                            } else if (
+                              !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(
+                                value
+                              )
+                            ) {
+                              error = "Invalid email address";
+                            }
+                            return error;
+                          }}
                         />
+                        <FormErrorMessage>{errors.email}</FormErrorMessage>
                       </FormControl>
 
                       <FormControl
@@ -112,9 +150,11 @@ const Signup = () => {
                           validate={(value) => {
                             let error;
 
-                            if (value.length < 6) {
-                              error =
-                                "Password must contain at least 6 characters";
+                            if (!value) {
+                              error = "*Required";
+                            }
+                            else if(value.length < 8){
+                                error="Password should have alteast 8 characters"
                             }
 
                             return error;
@@ -131,7 +171,7 @@ const Signup = () => {
                       >
                         Remember me?
                       </Field>
-                      
+
                       <Button
                         type="submit"
                         bgColor="black"
@@ -141,27 +181,30 @@ const Signup = () => {
                         Sign Up
                       </Button>
                     </VStack>
-                  </form>
+                  </Form>
                 )}
               </Formik>
               <br />
               <Text fontSize="md">
-                Already have an account?{" "}<b>
-                <Link onClick={handleLoginClick}  cursor="pointer">
-                Login
-              </Link></b> 
+                Already have an account?{" "}
+                <b>
+                  <Link onClick={handleLoginClick} cursor="pointer">
+                    Login
+                  </Link>
+                </b>
               </Text>
             </Box>
           </ModalBody>
 
-          <ModalFooter ></ModalFooter>
+          <ModalFooter></ModalFooter>
         </ModalContent>
-
-      </Modal >
-      <Login onLoginClose={onLoginClose} onLoginOpen={onLoginOpen} isLoginOpen={isLoginOpen}/>
+      </Modal>
+      <Login
+        onLoginClose={onLoginClose}
+        onLoginOpen={onLoginOpen}
+        isLoginOpen={isLoginOpen}
+      />
     </>
-
-    
   );
 };
 
