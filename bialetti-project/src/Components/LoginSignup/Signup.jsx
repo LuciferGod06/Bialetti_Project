@@ -22,7 +22,7 @@ import {
 } from "@chakra-ui/react";
 import { Formik, Field } from "formik";
 import "./signup.css";
-import Login from "./login";
+import Login from "./Login";
 
 const Signup = () => {
   
