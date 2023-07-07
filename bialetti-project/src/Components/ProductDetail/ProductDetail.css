@@ -1,0 +1,50 @@
+.ProductDetail_Top_Div{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    align-items: center;
+}
+.ProductDetail_Title_Div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 20px;
+}
+.ProductDetail_Price_Review{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 5%;
+}
+.ProductDetail_Price_Review > div > img{
+    width: 80px;
+    height: 17px;
+}
+.ProductDetail_Price_Review > div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.ProductDetail_Table > tr {
+    display: flex;
+    /* border: 1px solid; */
+    width: 460px;
+    justify-content: space-between;
+    border-bottom: 1px solid;
+    padding :5px 0px 10px 0px;
+}
+
+.ProductDetail_Cart_Div{
+    display: flex;
+    border: 1px solid;
+}
+.ProductDetail_Cart_Div > div:nth-of-type(1){
+    display: flex;
+    width: 20%;
+    border: 1px solid;
+    align-items: center;
+}
+
+.ProductDetail_Cart_Div > div:nth-of-type(1) > button {
+    padding: 5px;
+    font-size: 20px;
+}
