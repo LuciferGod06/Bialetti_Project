@@ -22,13 +22,21 @@ import {
 } from "@chakra-ui/react";
 import { Formik, Field, Form } from "formik";
 import Login from "./Login";
+import {useDispatch} from 'react-redux'
+import { postNewUser } from "../../Redux/loginsignAction";
 
 const Signup = () => {
+
+  const dispatch = useDispatch();
+
+  // home page 
   const {
     isOpen: isSignupOpen,
     onOpen: onSignupOpen,
     onClose: onSignupClose,
   } = useDisclosure();
+
+
   const {
     isOpen: isLoginOpen,
     onOpen: onLoginOpen,
@@ -42,7 +50,8 @@ const Signup = () => {
 
   return (
     <>
-      <Button onClick={onSignupOpen}>Sign Up</Button>
+    
+      {/* <Button onClick={onSignupOpen}>Sign Up</Button> */}
 
       <Modal isOpen={isSignupOpen} onClose={onSignupClose}>
         <ModalOverlay />
@@ -67,6 +76,7 @@ const Signup = () => {
                 onSubmit={(values) => {
                   console.log(values);
                   localStorage.setItem("userInfo",JSON.stringify(values));
+                  postNewUser(values,dispatch)
                   onSignupClose();
                   onLoginOpen();
                 }}

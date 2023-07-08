@@ -20,8 +20,11 @@ import {
   useDisclosure,
 } from "@chakra-ui/react";
 import { Formik, Field } from "formik";
+import { postNewUserLogin } from "../../Redux/loginsignAction";
+import { useDispatch } from "react-redux";
 
 const Login = ({ onLoginClose, isLoginOpen, onLoginOpen }) => {
+  const dispatch = useDispatch()
   return (
     <>
       {/* <Button onClick={onOpenL}>Login</Button> */}
@@ -41,7 +44,18 @@ const Login = ({ onLoginClose, isLoginOpen, onLoginOpen }) => {
                   rememberMe: false,
                 }}
                 onSubmit={(values) => {
-                  alert(JSON.stringify(values, null, 2));
+                let data = JSON.parse(localStorage.getItem("userInfo"));
+
+                if(values.email === data.email && values.password === data.password){
+                  //Navigate to home page
+                  alert("Login Success")
+                }
+                else{
+                  alert("Incorrect Credentials")
+                }
+
+                 dispatch( postNewUserLogin(values,dispatch))
+
                 }}
               >
                 {({ handleSubmit, errors, touched }) => (
