@@ -13,7 +13,6 @@ export const Product = () => {
   const [btn, setbtn] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
 
-
   useEffect(() => {
     let url = `http://localhost:8080/products`;
     if (currentPage){
@@ -61,7 +60,9 @@ export const Product = () => {
     }
   }
   const handlePageChange = (pageNumber) => {
+    
     setCurrentPage(currentPage + pageNumber);
+    
   };
 
   return (
