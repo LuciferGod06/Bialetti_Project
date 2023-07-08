@@ -130,12 +130,12 @@ export const Otppage = ({ setModalNumber }) => {
                 /><Input display={'none'} type="number" name='otp' focusBorderColor='yellow.600' value={randomNumber} />
                 <br />
                 <br />
-                <ButtonGroup variant="outline" width="50%">
-                    <Button type="submit" colorScheme="yellow" className="btn">
+                <ButtonGroup variant="outline" width="50%" marginLeft="220px">
+                    <Button type="submit" colorScheme="green" className="btn">
                         Submit
                     </Button>
                 </ButtonGroup>
             </form>
-        </div>
+        </div >
     );
 };

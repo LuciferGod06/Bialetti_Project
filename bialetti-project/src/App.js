@@ -1,13 +1,19 @@
 
-import { Heading } from '@chakra-ui/react';
 import './App.css';
-import PaymentPage from './Components/PaymentPages/PaymentPage';
+
+import Footer from './Components/Homepage/Footer';
+import FooterTop from './Components/Homepage/FooterTop';
+import Navbar from './Components/Homepage/Navbar';
+
+import AllRoutes from './Routes/AllRoutes';
 
 function App() {
   return (
     <div className="App">
-      <Heading>Bialetti Project</Heading>
-      <PaymentPage />
+      <Navbar />
+      <AllRoutes />
+      <FooterTop />
+      <Footer />
     </div>
   );
 }

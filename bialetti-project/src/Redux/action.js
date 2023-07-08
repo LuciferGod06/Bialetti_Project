@@ -4,7 +4,7 @@ import {
     POST_NEW_CARD,
 } from "./actionTypes";
 
-
+import { Total } from "./actionTypes"
 
 const postNewAddressAction = (payload) => {
     return {
@@ -27,3 +27,24 @@ export const postNewAddress = (payload) => (dispatch) => {
 export const postnewCard = (paylaod) => (dispatch) => {
     dispatch(postNewCardAction(paylaod));
 };
+
+//cart page action types
+
+const SubToal = (total) => {
+    return { type: Total, payload: total }
+}
+export { SubToal }
+
+
+//product page actions
+export const handleProductData = (payload) => {
+    return {
+        type: "DATAUPDATE",
+        payload
+    }
+}
+export const handleLoading = () => {
+    return {
+        type: "UPDATELOADING"
+    }
+}

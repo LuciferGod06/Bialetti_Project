@@ -26,7 +26,7 @@ export const Ordersuccessfull = ({ setModalNumber }) => {
             <Heading size='lg'> Order ID - {orderID} </Heading>
             <h6 style={{ fontSize: "small" }}>Please keep this Order ID for future reference </h6>
             <ButtonGroup variant="outline" width="50%" margin="20px" >
-                <Button onClick={() => { navigate('/'); setModalNumber(0) }} colorScheme="yellow" className="btn">
+                <Button onClick={() => { navigate('/'); setModalNumber(0) }} colorScheme="green" className="btn">
                     Continue Shopping...
                 </Button>
             </ButtonGroup>

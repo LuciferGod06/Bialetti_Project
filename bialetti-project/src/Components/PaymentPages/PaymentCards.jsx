@@ -139,7 +139,7 @@ const PaymentCards = () => {
                         </FormControl>
                     </Flex>
                 </Stack>
-                <Button colorScheme="red" mt={6} color="white" p={6} type="submit">
+                <Button colorScheme="green" mt={6} color="white" p={6} type="submit">
                     ADD NEW CARD
                 </Button>
             </form>
@@ -177,7 +177,7 @@ const PaymentCards = () => {
                                     />
                                 );
                             })}
-                            <Button colorScheme="red" mt={6} color="white" p={6} alignSelf={'center'} onClick={handleOTP}>MAKE PAYMENT</Button>
+                            <Button colorScheme="green" mt={6} color="white" p={6} alignSelf={'center'} onClick={handleOTP}>MAKE PAYMENT</Button>
                         </Flex>
                     </Box>
             }

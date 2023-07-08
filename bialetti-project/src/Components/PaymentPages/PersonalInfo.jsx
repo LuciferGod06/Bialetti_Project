@@ -98,7 +98,7 @@ const PersonalInfo = ({ setSelectedBox }) => {
             <form onSubmit={handleFormSubmit}>
                 <Stack spacing={4}>
                     <Flex>
-                        <FormControl>
+                        <FormControl >
                             <Input
                                 type="text"
                                 placeholder="Enter your name"
@@ -108,7 +108,7 @@ const PersonalInfo = ({ setSelectedBox }) => {
                                 onChange={handleChange}
                             />
                         </FormControl>
-                        <FormControl>
+                        <FormControl >
                             <Input
                                 type="email"
                                 placeholder="Enter your email"
@@ -177,7 +177,7 @@ const PersonalInfo = ({ setSelectedBox }) => {
                     </FormControl>
                 </Stack>
 
-                <Button colorScheme="red" mt={6} color="white" p={6} type="submit">
+                <Button colorScheme="green" mt={6} color="white" p={6} type="submit">
                     ADD NEW ADDRESS
                 </Button>
             </form>
@@ -215,7 +215,7 @@ const PersonalInfo = ({ setSelectedBox }) => {
                                     />
                                 );
                             })}
-                            <Button colorScheme="red" mt={6} color="white" p={6} alignSelf={'center'} onClick={() => setSelectedBox(1)}>MAKE PAYMENT</Button>
+                            <Button colorScheme="green" mt={6} color="white" p={6} alignSelf={'center'} onClick={() => setSelectedBox(1)}>MAKE PAYMENT</Button>
                         </Flex>
                     </Box>
             }
