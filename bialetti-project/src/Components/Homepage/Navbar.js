@@ -44,7 +44,6 @@ const Navbar = () => {
                 </a>
                 <Link to="./cart">
                     <FaShoppingBag />
-
                 </Link>
 
             </div>
@@ -63,10 +62,11 @@ const Navbar = () => {
                     <li>
                         <Link to="./product">
                             PRODUCTS
+                            <a href="#">
+                                {/* PRODUCTS */}
+                            </a>
                         </Link>
-                        {/* <a href="#">
-                            PRODUCTS
-                        </a> */}
+
                     </li>
                     <li>
                         <a href="#">NEWS</a>
