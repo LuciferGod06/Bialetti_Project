@@ -34,7 +34,7 @@ const CartPage = () => {
   const [array, setArray] = useState([]);
 
   const navigate = useNavigate();
-
+// getdata
   const getData = () => {
     axios.get(`https://mymock-sl72.onrender.com/cart`).then((res) => {
       console.log(res.data);
