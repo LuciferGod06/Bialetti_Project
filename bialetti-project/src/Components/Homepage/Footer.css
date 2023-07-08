@@ -1,0 +1,134 @@
+ .footer-container {
+    display: flex;
+    background-color: #fff;
+    color: #fff;
+    padding: 20px;
+    height: 55vh;
+  }
+  
+  .footer-left {
+    width: 50%;
+    background-color: #000;
+    color: #fff;
+  }
+  
+
+  
+  .newsletter-section {
+    margin-top: 20px;
+  }
+  
+  .newsletter-section p {
+    margin-top: 20px;
+  }
+
+  .newsletter-section h3 {
+    margin-top: 5px;
+  }
+
+  .newsletter-form input {
+    margin-top: 20px;
+    width: 250px;
+    padding: 15px;
+    margin-bottom: 5px;
+    background-color: #000;
+    color: #fff;
+  }
+  
+  .newsletter-form button {
+    padding: 15px 35px;
+  }
+  
+  .social-media-section {
+    margin-top: 20px;
+  }
+
+  .social-media-section .about_us {
+    margin-top: 30px;
+  }
+
+  .social-media-section .about_us a {
+    color: #fff;
+    padding: 10px;
+    text-decoration: none;
+    
+  }
+
+  .social-media-section .about_us a:hover {
+    color: red;
+  }
+  
+  .social-icons {
+    display: flex;
+    margin-left: 45%;
+  }
+  
+  .social-icons a {
+    color: #fff;
+    margin-right: 15px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-size: larger;
+  }
+  
+  .footer-right {
+    width: 50%;
+    background-color: #fff;
+    color: #000;
+    padding-left: 20px;
+  }
+  
+  .footer-links {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .footer-column h4{
+    margin-top: 20px;
+  }
+
+  .footer-column h4:hover {
+    color: red;
+  }
+  
+  .footer-column ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin-top: 10px;
+    margin-right: 5px;
+  }
+
+  .footer-column ul li a {
+    text-decoration: none;
+    color: #000;
+  }
+
+  .footer-column ul li a:hover {
+    color: red;
+  }
+  
+  .footer-buttons {
+    margin-top: 25px;
+    padding: 5px 10px;
+  }
+
+  
+  .footer-buttons button {
+    margin-right: 10px;
+    font-weight: bold;
+    padding: 10px 10px;
+    color: #fff;
+    background-color: #000;
+    border-radius: 5px;
+  }
+
+  .top_btn {
+    background-color: rgb(155, 249, 15);
+    border: 1px solid rebeccapurple;
+    border-radius: 2px;
+  }
+  
+  .footer-copyright {
+    margin-top: 20px;
+  }
+  

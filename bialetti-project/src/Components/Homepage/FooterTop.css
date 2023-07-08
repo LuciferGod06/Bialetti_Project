@@ -1,0 +1,52 @@
+.footer {
+  padding: 20px 0 0 0;
+  color: #333;
+
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: whitesmoke;
+  height: 13vh;
+  width: 100%;
+}
+
+.logo-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.logo-section .logo {
+  width: 100px;
+  height: 11vh;
+  margin-right: 20px;
+  margin-left: 50px;
+  margin-top: auto;
+}
+
+.logo-section h4 {
+  display: flex;
+  float: left;
+}
+
+.footer-links-top img {
+  height: 30px;
+  width: 30px;
+}
+
+.footer-links-top {
+  display: flex;
+  width: 40%;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 10px;
+  margin-right: 80px;
+}
+
+.footer-links-top h4 p {
+  font-size: 0.8rem;
+  font-weight: 400;
+}
