@@ -9,6 +9,7 @@ import image from './fivestar.PNG'
 import blackstar from './blackstar.jpg'
 import { UnorderedList, ListItem } from '@chakra-ui/react'
 import { MdOutlineRateReview } from 'react-icons/md'
+import { useToast } from '@chakra-ui/react';
 
 export const ProductDetail = () => {
 
@@ -17,6 +18,8 @@ export const ProductDetail = () => {
   const [tech, settech] = useState(false);
   const [ship, setship] = useState(false);
   const [qty, setqty] = useState(1);
+  const toast = useToast()
+
 
   const { id } = useParams();
 
@@ -34,6 +37,14 @@ export const ProductDetail = () => {
       image: singledata.image,
     }).then((resp) => { console.log(resp.data) })
       .catch((error) => { console.log(error) })
+      toast({
+        title: 'Added Cart.',
+        description: "Item is added.",
+        status: 'success',
+        duration: 3000,
+        isClosable: false,
+      })
+
   }
   return (
 

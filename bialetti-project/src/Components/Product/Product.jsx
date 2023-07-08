@@ -3,17 +3,17 @@ import './Product.css'
 import axios from 'axios'
 import { useDispatch, useSelector } from 'react-redux';
 import { handleLoading, handleProductData } from '../../Redux/action'
-import logo from './symbole.PNG'
+import topimage from './topimage.PNG'
 import { Center, Spinner } from '@chakra-ui/react';
 import { Pagination } from '../Pagination/Pagination';
 import { Link } from 'react-router-dom';
-import { store } from '../../Redux/store';
+import { useToast } from '@chakra-ui/react';
 
 export const Product = () => {
   const [sorting, setsorting] = useState('');
   const [btn, setbtn] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
-
+  const toast = useToast()
 
 
   useEffect(() => {
@@ -68,7 +68,7 @@ export const Product = () => {
 
   return (
     <div style={{ padding: "10px 20px 10px 20px " }} >
-
+      <img style={{padding:"10px 0px 10px 0px"}}  src={topimage} alt="" />
       <div className='Product_Top_Button_Div' >
         <button value="all" onClick={(e) => { handlebtn(e.target.value) }}  >ALL</button>
         <button value="coffee" onClick={(e) => { handlebtn(e.target.value) }} >COFFEE</button>
