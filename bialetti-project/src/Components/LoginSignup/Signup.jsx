@@ -23,13 +23,13 @@ import {
 import { Formik, Field, Form } from "formik";
 import Login from "./Login";
 import { useDispatch } from 'react-redux'
-// import { postNewUser } from "../../Redux/loginsignAction";
+
 
 const Signup = ({ isSignupOpen, onSignupClose, onSignupOpen }) => {
 
   const dispatch = useDispatch();
 
-  // home page 
+
 
 
   const {
@@ -46,7 +46,7 @@ const Signup = ({ isSignupOpen, onSignupClose, onSignupOpen }) => {
   return (
     <>
 
-      {/* <Button onClick={onSignupOpen}>Sign Up</Button> */}
+
 
       <Modal isOpen={isSignupOpen} onClose={onSignupClose}>
         <ModalOverlay />
@@ -71,7 +71,7 @@ const Signup = ({ isSignupOpen, onSignupClose, onSignupOpen }) => {
                 onSubmit={(values) => {
                   console.log(values);
                   localStorage.setItem("userInfo", JSON.stringify(values));
-                  // postNewUser(values, dispatch)
+
                   onSignupClose();
                   onLoginOpen();
                 }}
