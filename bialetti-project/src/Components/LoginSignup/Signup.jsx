@@ -22,15 +22,10 @@ import {
 } from "@chakra-ui/react";
 import { Formik, Field, Form } from "formik";
 import Login from "./Login";
-import { useDispatch } from 'react-redux'
-
+import { useDispatch } from "react-redux";
 
 const Signup = ({ isSignupOpen, onSignupClose, onSignupOpen }) => {
-
   const dispatch = useDispatch();
-
-
-
 
   const {
     isOpen: isLoginOpen,
@@ -45,9 +40,6 @@ const Signup = ({ isSignupOpen, onSignupClose, onSignupOpen }) => {
 
   return (
     <>
-
-
-
       <Modal isOpen={isSignupOpen} onClose={onSignupClose}>
         <ModalOverlay />
         <ModalContent
@@ -157,9 +149,9 @@ const Signup = ({ isSignupOpen, onSignupClose, onSignupOpen }) => {
 
                             if (!value) {
                               error = "*Required";
-                            }
-                            else if (value.length < 8) {
-                              error = "Password should have alteast 8 characters"
+                            } else if (value.length < 8) {
+                              error =
+                                "Password should have alteast 8 characters";
                             }
 
                             return error;
