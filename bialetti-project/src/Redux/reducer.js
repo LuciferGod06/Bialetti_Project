@@ -1,4 +1,4 @@
-import { Add, Reduce, Total} from "./ActionType"
+import { Total} from "./ActionType"
 
 const initialState = {
     
@@ -7,18 +7,7 @@ const initialState = {
 // console.log(store)
 const Reducer = (state = initialState, {type,payload}) => {
     switch(type) {
-        case Add:{
-            return {
-              ...state,
-                counter:state.counter+payload
-            }
-        }
-        case Reduce:{
-            return {
-              ...state,
-                counter:state.counter-payload
-            }
-        }
+      
         case Total:{
             return {
               ...state,
