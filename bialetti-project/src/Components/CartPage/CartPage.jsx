@@ -23,6 +23,8 @@ import { SubToal } from "../../Redux/action";
 import axios from "axios";
 import { useNavigate } from "react-router-dom"
 
+// this is cartpage
+
 
 const CartPage = () => {
   const [TOTAl, setTotal] = useState(0);
