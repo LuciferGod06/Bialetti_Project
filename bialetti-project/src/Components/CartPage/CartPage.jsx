@@ -45,6 +45,7 @@ const CartPage = () => {
     getData();
   }, []);
 
+  // Subtotal
   useEffect(() => {
     const total = array.reduce((acc, curr) => {
       return acc + curr.price * curr.quantity;
