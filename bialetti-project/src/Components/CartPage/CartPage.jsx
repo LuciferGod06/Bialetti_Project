@@ -98,7 +98,7 @@ const CartPage = () => {
   const AllDel = () => {
     setArray([]);
   };
-
+// main work
   return (
     <Box m={5} bgColor="gray.50">
       <Box m="auto" w={["100%", "70%", "52%"]}>
