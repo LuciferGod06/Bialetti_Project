@@ -44,7 +44,7 @@
 .ProductDetail_Table>tr {
     display: flex;
     /* border: 1px solid; */
-    width: 54vh;
+    width: 50vh;
     justify-content: space-between;
     border-bottom: 1px solid rgba(222, 250, 250, 0.918);
     ;

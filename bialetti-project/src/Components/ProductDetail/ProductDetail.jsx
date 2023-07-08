@@ -30,7 +30,8 @@ const handleCartData =()=>{
       axios.post(`http://localhost:8080/CartProduct`,{
         title:singledata.title,
         price:singledata.price,
-        quantity:qty
+        quantity:qty,
+        image:singledata.image
       }).then((resp)=>{console.log(resp.data)})
       .catch((error)=>{console.log(error)})
 }

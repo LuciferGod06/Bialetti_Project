@@ -12,12 +12,15 @@ export const Product = () => {
   const [sorting, setsorting] = useState('');
   const [btn, setbtn] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
-  const [totalPages, setTotalPages] = useState(0);
 
 
   useEffect(() => {
     let url = `http://localhost:8080/products`;
-    if (sorting && btn) {
+    if (currentPage){
+      url += `?_limit=9&_page=${currentPage}`
+    }
+    
+   else if (sorting && btn) {
       url += `?type=${btn}&_sort=price&_order=${sorting}`
     }
 
@@ -29,7 +32,7 @@ export const Product = () => {
     }
     fetching(url)
 
-  }, [btn, sorting]);
+  }, [btn, sorting,currentPage]);
 
   const dispatch = useDispatch();
   const { ProductData, loading } = useSelector((store) => {
@@ -58,7 +61,7 @@ export const Product = () => {
     }
   }
   const handlePageChange = (pageNumber) => {
-    setCurrentPage(pageNumber);
+    setCurrentPage(currentPage + pageNumber);
   };
 
   return (
@@ -105,11 +108,14 @@ export const Product = () => {
             }
 
             </div>
-            <Pagination
-        currentPage={currentPage}
-        totalPages={totalPages}
-        onPageChange={handlePageChange}
-      />
+
+            {
+              sorting || btn ? "" :<Pagination
+              currentPage={currentPage}
+              onPageChange={handlePageChange}
+            />
+            }
+            
           </div>
 
       }
